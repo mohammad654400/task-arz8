@@ -22,7 +22,7 @@ const Home = () => {
     );
 
   return (
-    <div className="flex flex-col items-center p-8 px-20 h-full w-full">
+    <div className="flex flex-col items-center p-8 px-20 h-full w-full bg-background">
       <div className="flex w-full mb-6 gap-4 justify-between flex-col lg:flex-row">
         <div className="flex lg:w-1/3 w-full">
           <SearchInput query={query} setQuery={setQuery} />

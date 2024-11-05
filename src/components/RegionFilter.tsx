@@ -1,14 +1,9 @@
-import React from "react";
-
 interface RegionFilterProps {
   selectedRegion: string;
   setSelectedRegion: (region: string) => void;
 }
 
-const RegionFilter = ({
-  selectedRegion,
-  setSelectedRegion,
-}: RegionFilterProps) => {
+const RegionFilter = ({ selectedRegion, setSelectedRegion }: RegionFilterProps) => {
   const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
   return (
