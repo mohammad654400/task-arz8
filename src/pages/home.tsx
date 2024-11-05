@@ -1,8 +1,49 @@
-const Home = () =>{
-return(
-    <div>
-        <h1>test</h1>
+import { useState } from "react";
+import useCountries from "../hooks/useCountries";
+import SearchInput from "../components/SearchInput";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import Card from "../components/Card";
+
+const Home = () => {
+  const [query, setQuery] = useState("");
+  const { data: countries, isLoading, isError } = useCountries();
+
+  if (isError) return <p>Error loading countries.</p>;
+
+  const filteredCountries = countries?.filter((country) =>
+    country.name.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return (
+    <div className="flex flex-col items-center p-8 px-20 h-full w-full">
+      <div className="flex w-full mb-6">
+        <div className="flex lg:w-1/3 w-full">
+          <SearchInput query={query} setQuery={setQuery} />
+        </div>
+      </div>
+
+      <div className="flex flex-wrap flex-row justify-center md:justify-between  t  w-full ">
+        {isLoading
+          ? [...Array(12)].map((_, index) => (
+              <div
+                key={index}
+                className="w-64 p-4 bg-cardBackground rounded shadow-md"
+              >
+                <Skeleton height={20} width="60%" />
+                <Skeleton height={150} className="my-2" />
+                <Skeleton height={20} width="80%" />
+                <Skeleton height={20} width="70%" />
+              </div>
+            ))
+          : filteredCountries?.map((country) => (
+              <div key={country.alpha3Code} className="w-64 h-80 my-8">
+                <Card country={country} />
+              </div>
+            ))}
+      </div>
     </div>
-)
-}
-export default Home
+  );
+};
+
+export default Home;
