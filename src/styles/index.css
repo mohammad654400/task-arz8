@@ -3,21 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #f3f4f6; /* Light background */
-  --color-card-background: #ffffff; /* Light card background */
-  --color-text: #111827; /* Light text */
-  --color-primary: #1d4ed8; /* Light primary color */
-  --color-secondary: #374151; /* Light secondary color */
-  --color-input-bg: #e5e7eb; /* Light input background */
+  --color-background: #f3f4f6; 
+  --color-card-background: #ffffff; 
+  --color-text: #111827; 
+  --color-primary: #000000;
+  --color-secondary: #4a4a4a; 
+  --color-input-bg: #e5e7eb;
+  --color-border: #d1d5db;
 }
 
 [data-theme="dark"] {
-  --color-background: #202c37; /* Dark background */
-  --color-card-background: #2b3945; /* Dark card background */
-  --color-text: #ffffff; /* Dark text */
-  --color-primary: #3b82f6; /* Dark primary color */
-  --color-secondary: #4b5563; /* Dark secondary color */
-  --color-input-bg: #2b3945; /* Dark input background */
+  --color-background: #2b3945; 
+  --color-card-background: #202c36; 
+  --color-text: #ffffff; 
+  --color-primary: #d7d7d7;
+  --color-secondary: #b0bec5;
+  --color-input-bg: #2b3945;
+  --color-border: #4b5563;
 }
 
 body {

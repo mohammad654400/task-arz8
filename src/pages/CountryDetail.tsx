@@ -14,20 +14,25 @@ const CountryDetail = () => {
   if (!country) return <p>Country not found.</p>;
 
   return (
-    <div className="flex flex-col items-center p-8 px-20 h-full w-full bg-background text-text">
-      <button
-        onClick={() => navigate(-1)}
-        className="mb-4 px-4 py-2 bg-cardBackground text-primary rounded-md shadow-md hover:bg-opacity-80"
-      >
-        ← Back
-      </button>
-      <div className="flex flex-col md:flex-row items-start gap-8 w-full max-w-4xl bg-cardBackground p-8 rounded-lg shadow-lg">
-        <img
-          src={country.flags.png}
-          alt={`${country.name} flag`}
-          className="w-full md:w-1/2 h-auto object-cover rounded-md"
-        />
-        <div className="flex flex-col w-full md:w-1/2">
+    <div className="flex flex-col items-center p-8 px-20 h-[90vh] w-full bg-background text-text">
+      <div className="flex w-full">
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-4 px-4 py-2 bg-cardBackground text-primary rounded-md shadow-md hover:bg-opacity-80"
+        >
+          ← Back
+        </button>
+      </div>
+      <div className="flex flex-col md:flex-row items-start w-full h-full justify-between">
+        <div className="bg-cardBackground p-8 rounded-lg shadow-lg w-full md:w-[48%] max-h-[500px] flex items-center justify-center">
+          <img
+            src={country.flags.png}
+            alt={`${country.name} flag`}
+            className="w-full h-auto object-cover rounded-md max-h-[90%]"
+          />
+        </div>
+
+        <div className="flex flex-col w-full md:w-[48%] mt-8 md:mt-0">
           <h2 className="text-primary font-semibold text-2xl mb-4">
             {country.name}
           </h2>
